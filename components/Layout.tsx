@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Head from "next/head";
+import Navbar from './Navbar';
 
 interface Props {
     children?: React.ReactNode
@@ -8,6 +9,7 @@ interface Props {
 const Layout: React.FC<Props> = ({children}) => {
     return (
         <React.Fragment>
+            <Navbar/>
             <Head>
                 <title>Hundred and up | creative agency</title>
                 <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"/>
@@ -17,13 +19,16 @@ const Layout: React.FC<Props> = ({children}) => {
                 {children}
             </main>
             <style jsx global>{`
+                * {
+                    box-sizing: border-box;
+                }
                 body {
                     font-family: 'Roboto', sans-serif;
+                    b
                 }
                 main {
                     max-width: 960px;
-                    margin-left: auto;
-                    margin-right: auto;
+                    margin: 0px auto;
                     overflow: hidden;
                 }
                 h1 {
