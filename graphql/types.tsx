@@ -8,8 +8,8 @@ export type Scalars = {
   Boolean: boolean,
   Int: number,
   Float: number,
-  JSON: any,
   DateTime: any,
+  JSON: any,
   Upload: any,
   Time: any,
   Date: any,
@@ -21,44 +21,22 @@ export enum CacheControlScope {
   Private = 'PRIVATE'
 }
 
-export type Categories = {
-   __typename?: 'Categories',
-  name: Scalars['String'],
-  restaurants?: Maybe<Array<Maybe<Restaurant>>>,
-  id: Scalars['ID'],
-  created_at: Scalars['DateTime'],
-  updated_at: Scalars['DateTime'],
+export type CreateProjectInput = {
+  data?: Maybe<ProjectInput>,
 };
 
-
-export type CategoriesRestaurantsArgs = {
-  sort?: Maybe<Scalars['String']>,
-  limit?: Maybe<Scalars['Int']>,
-  start?: Maybe<Scalars['Int']>,
-  where?: Maybe<Scalars['JSON']>
+export type CreateProjectPayload = {
+   __typename?: 'createProjectPayload',
+  project?: Maybe<Projects>,
 };
 
-export type CategoryInput = {
-  name: Scalars['String'],
-  restaurants?: Maybe<Array<Maybe<Scalars['ID']>>>,
+export type CreateProjectTypeInput = {
+  data?: Maybe<ProjectTypeInput>,
 };
 
-export type CreateCategoryInput = {
-  data?: Maybe<CategoryInput>,
-};
-
-export type CreateCategoryPayload = {
-   __typename?: 'createCategoryPayload',
-  category?: Maybe<Categories>,
-};
-
-export type CreateRestaurantInput = {
-  data?: Maybe<RestaurantInput>,
-};
-
-export type CreateRestaurantPayload = {
-   __typename?: 'createRestaurantPayload',
-  restaurant?: Maybe<Restaurant>,
+export type CreateProjectTypePayload = {
+   __typename?: 'createProjectTypePayload',
+  projectType?: Maybe<ProjectType>,
 };
 
 export type CreateRoleInput = {
@@ -68,6 +46,15 @@ export type CreateRoleInput = {
 export type CreateRolePayload = {
    __typename?: 'createRolePayload',
   role?: Maybe<UsersPermissionsRole>,
+};
+
+export type CreateTitleInput = {
+  data?: Maybe<TitleInput>,
+};
+
+export type CreateTitlePayload = {
+   __typename?: 'createTitlePayload',
+  title?: Maybe<Titles>,
 };
 
 export type CreateUserInput = {
@@ -81,22 +68,22 @@ export type CreateUserPayload = {
 
 
 
-export type DeleteCategoryInput = {
+export type DeleteProjectInput = {
   where?: Maybe<InputId>,
 };
 
-export type DeleteCategoryPayload = {
-   __typename?: 'deleteCategoryPayload',
-  category?: Maybe<Categories>,
+export type DeleteProjectPayload = {
+   __typename?: 'deleteProjectPayload',
+  project?: Maybe<Projects>,
 };
 
-export type DeleteRestaurantInput = {
+export type DeleteProjectTypeInput = {
   where?: Maybe<InputId>,
 };
 
-export type DeleteRestaurantPayload = {
-   __typename?: 'deleteRestaurantPayload',
-  restaurant?: Maybe<Restaurant>,
+export type DeleteProjectTypePayload = {
+   __typename?: 'deleteProjectTypePayload',
+  projectType?: Maybe<ProjectType>,
 };
 
 export type DeleteRoleInput = {
@@ -108,6 +95,15 @@ export type DeleteRolePayload = {
   role?: Maybe<UsersPermissionsRole>,
 };
 
+export type DeleteTitleInput = {
+  where?: Maybe<InputId>,
+};
+
+export type DeleteTitlePayload = {
+   __typename?: 'deleteTitlePayload',
+  title?: Maybe<Titles>,
+};
+
 export type DeleteUserInput = {
   where?: Maybe<InputId>,
 };
@@ -115,11 +111,6 @@ export type DeleteUserInput = {
 export type DeleteUserPayload = {
    __typename?: 'deleteUserPayload',
   user?: Maybe<UsersPermissionsUser>,
-};
-
-export type EditCategoryInput = {
-  name?: Maybe<Scalars['String']>,
-  restaurants?: Maybe<Array<Maybe<Scalars['ID']>>>,
 };
 
 export type EditFileInput = {
@@ -135,11 +126,16 @@ export type EditFileInput = {
   related?: Maybe<Array<Maybe<Scalars['ID']>>>,
 };
 
-export type EditRestaurantInput = {
-  Name?: Maybe<Scalars['String']>,
-  Description?: Maybe<Scalars['String']>,
-  categories?: Maybe<Array<Maybe<Scalars['ID']>>>,
-  picture?: Maybe<Scalars['ID']>,
+export type EditProjectInput = {
+  title?: Maybe<Scalars['String']>,
+  coverimage?: Maybe<Scalars['ID']>,
+  description?: Maybe<Scalars['String']>,
+  project_types?: Maybe<Array<Maybe<Scalars['ID']>>>,
+  titles?: Maybe<Array<Maybe<Scalars['ID']>>>,
+};
+
+export type EditProjectTypeInput = {
+  type?: Maybe<Scalars['String']>,
 };
 
 export type EditRoleInput = {
@@ -148,6 +144,10 @@ export type EditRoleInput = {
   type?: Maybe<Scalars['String']>,
   permissions?: Maybe<Array<Maybe<Scalars['ID']>>>,
   users?: Maybe<Array<Maybe<Scalars['ID']>>>,
+};
+
+export type EditTitleInput = {
+  title?: Maybe<Scalars['String']>,
 };
 
 export type EditUserInput = {
@@ -180,16 +180,19 @@ export type InputId = {
 
 
 
-export type Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | Categories | CreateCategoryPayload | UpdateCategoryPayload | DeleteCategoryPayload | Restaurant | CreateRestaurantPayload | UpdateRestaurantPayload | DeleteRestaurantPayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | CreateRolePayload | UpdateRolePayload | DeleteRolePayload | UsersPermissionsUser | CreateUserPayload | UpdateUserPayload | DeleteUserPayload;
+export type Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | ProjectType | CreateProjectTypePayload | UpdateProjectTypePayload | DeleteProjectTypePayload | Projects | CreateProjectPayload | UpdateProjectPayload | DeleteProjectPayload | Titles | CreateTitlePayload | UpdateTitlePayload | DeleteTitlePayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | CreateRolePayload | UpdateRolePayload | DeleteRolePayload | UsersPermissionsUser | CreateUserPayload | UpdateUserPayload | DeleteUserPayload;
 
 export type Mutation = {
    __typename?: 'Mutation',
-  createCategory?: Maybe<CreateCategoryPayload>,
-  updateCategory?: Maybe<UpdateCategoryPayload>,
-  deleteCategory?: Maybe<DeleteCategoryPayload>,
-  createRestaurant?: Maybe<CreateRestaurantPayload>,
-  updateRestaurant?: Maybe<UpdateRestaurantPayload>,
-  deleteRestaurant?: Maybe<DeleteRestaurantPayload>,
+  createProjectType?: Maybe<CreateProjectTypePayload>,
+  updateProjectType?: Maybe<UpdateProjectTypePayload>,
+  deleteProjectType?: Maybe<DeleteProjectTypePayload>,
+  createProject?: Maybe<CreateProjectPayload>,
+  updateProject?: Maybe<UpdateProjectPayload>,
+  deleteProject?: Maybe<DeleteProjectPayload>,
+  createTitle?: Maybe<CreateTitlePayload>,
+  updateTitle?: Maybe<UpdateTitlePayload>,
+  deleteTitle?: Maybe<DeleteTitlePayload>,
   createRole?: Maybe<CreateRolePayload>,
   updateRole?: Maybe<UpdateRolePayload>,
   deleteRole?: Maybe<DeleteRolePayload>,
@@ -203,33 +206,48 @@ export type Mutation = {
 };
 
 
-export type MutationCreateCategoryArgs = {
-  input?: Maybe<CreateCategoryInput>
+export type MutationCreateProjectTypeArgs = {
+  input?: Maybe<CreateProjectTypeInput>
 };
 
 
-export type MutationUpdateCategoryArgs = {
-  input?: Maybe<UpdateCategoryInput>
+export type MutationUpdateProjectTypeArgs = {
+  input?: Maybe<UpdateProjectTypeInput>
 };
 
 
-export type MutationDeleteCategoryArgs = {
-  input?: Maybe<DeleteCategoryInput>
+export type MutationDeleteProjectTypeArgs = {
+  input?: Maybe<DeleteProjectTypeInput>
 };
 
 
-export type MutationCreateRestaurantArgs = {
-  input?: Maybe<CreateRestaurantInput>
+export type MutationCreateProjectArgs = {
+  input?: Maybe<CreateProjectInput>
 };
 
 
-export type MutationUpdateRestaurantArgs = {
-  input?: Maybe<UpdateRestaurantInput>
+export type MutationUpdateProjectArgs = {
+  input?: Maybe<UpdateProjectInput>
 };
 
 
-export type MutationDeleteRestaurantArgs = {
-  input?: Maybe<DeleteRestaurantInput>
+export type MutationDeleteProjectArgs = {
+  input?: Maybe<DeleteProjectInput>
+};
+
+
+export type MutationCreateTitleArgs = {
+  input?: Maybe<CreateTitleInput>
+};
+
+
+export type MutationUpdateTitleArgs = {
+  input?: Maybe<UpdateTitleInput>
+};
+
+
+export type MutationDeleteTitleArgs = {
+  input?: Maybe<DeleteTitleInput>
 };
 
 
@@ -290,12 +308,62 @@ export type MutationRegisterArgs = {
   input: UserInput
 };
 
+export type ProjectInput = {
+  title: Scalars['String'],
+  coverimage?: Maybe<Scalars['ID']>,
+  description?: Maybe<Scalars['String']>,
+  project_types?: Maybe<Array<Maybe<Scalars['ID']>>>,
+  titles?: Maybe<Array<Maybe<Scalars['ID']>>>,
+};
+
+export type Projects = {
+   __typename?: 'Projects',
+  title: Scalars['String'],
+  coverimage?: Maybe<UploadFile>,
+  description?: Maybe<Scalars['String']>,
+  project_types?: Maybe<Array<Maybe<ProjectType>>>,
+  titles?: Maybe<Array<Maybe<Titles>>>,
+  id: Scalars['ID'],
+  created_at: Scalars['DateTime'],
+  updated_at: Scalars['DateTime'],
+};
+
+
+export type ProjectsProject_TypesArgs = {
+  sort?: Maybe<Scalars['String']>,
+  limit?: Maybe<Scalars['Int']>,
+  start?: Maybe<Scalars['Int']>,
+  where?: Maybe<Scalars['JSON']>
+};
+
+
+export type ProjectsTitlesArgs = {
+  sort?: Maybe<Scalars['String']>,
+  limit?: Maybe<Scalars['Int']>,
+  start?: Maybe<Scalars['Int']>,
+  where?: Maybe<Scalars['JSON']>
+};
+
+export type ProjectType = {
+   __typename?: 'ProjectType',
+  type: Scalars['String'],
+  id: Scalars['ID'],
+  created_at: Scalars['DateTime'],
+  updated_at: Scalars['DateTime'],
+};
+
+export type ProjectTypeInput = {
+  type: Scalars['String'],
+};
+
 export type Query = {
    __typename?: 'Query',
-  category?: Maybe<Categories>,
-  categories?: Maybe<Array<Maybe<Categories>>>,
-  restaurant?: Maybe<Restaurant>,
-  restaurants?: Maybe<Array<Maybe<Restaurant>>>,
+  projectType?: Maybe<ProjectType>,
+  projectTypes?: Maybe<Array<Maybe<ProjectType>>>,
+  project?: Maybe<Projects>,
+  projects?: Maybe<Array<Maybe<Projects>>>,
+  title?: Maybe<Titles>,
+  titles?: Maybe<Array<Maybe<Titles>>>,
   files?: Maybe<Array<Maybe<UploadFile>>>,
   role?: Maybe<UsersPermissionsRole>,
   roles?: Maybe<Array<Maybe<UsersPermissionsRole>>>,
@@ -305,12 +373,12 @@ export type Query = {
 };
 
 
-export type QueryCategoryArgs = {
+export type QueryProjectTypeArgs = {
   id: Scalars['ID']
 };
 
 
-export type QueryCategoriesArgs = {
+export type QueryProjectTypesArgs = {
   sort?: Maybe<Scalars['String']>,
   limit?: Maybe<Scalars['Int']>,
   start?: Maybe<Scalars['Int']>,
@@ -318,12 +386,25 @@ export type QueryCategoriesArgs = {
 };
 
 
-export type QueryRestaurantArgs = {
+export type QueryProjectArgs = {
   id: Scalars['ID']
 };
 
 
-export type QueryRestaurantsArgs = {
+export type QueryProjectsArgs = {
+  sort?: Maybe<Scalars['String']>,
+  limit?: Maybe<Scalars['Int']>,
+  start?: Maybe<Scalars['Int']>,
+  where?: Maybe<Scalars['JSON']>
+};
+
+
+export type QueryTitleArgs = {
+  id: Scalars['ID']
+};
+
+
+export type QueryTitlesArgs = {
   sort?: Maybe<Scalars['String']>,
   limit?: Maybe<Scalars['Int']>,
   start?: Maybe<Scalars['Int']>,
@@ -364,32 +445,6 @@ export type QueryUsersArgs = {
   where?: Maybe<Scalars['JSON']>
 };
 
-export type Restaurant = {
-   __typename?: 'Restaurant',
-  Name: Scalars['String'],
-  Description: Scalars['String'],
-  picture?: Maybe<UploadFile>,
-  categories?: Maybe<Array<Maybe<Categories>>>,
-  id: Scalars['ID'],
-  created_at: Scalars['DateTime'],
-  updated_at: Scalars['DateTime'],
-};
-
-
-export type RestaurantCategoriesArgs = {
-  sort?: Maybe<Scalars['String']>,
-  limit?: Maybe<Scalars['Int']>,
-  start?: Maybe<Scalars['Int']>,
-  where?: Maybe<Scalars['JSON']>
-};
-
-export type RestaurantInput = {
-  Name: Scalars['String'],
-  Description: Scalars['String'],
-  categories?: Maybe<Array<Maybe<Scalars['ID']>>>,
-  picture?: Maybe<Scalars['ID']>,
-};
-
 export type RoleInput = {
   name: Scalars['String'],
   description?: Maybe<Scalars['String']>,
@@ -399,24 +454,36 @@ export type RoleInput = {
 };
 
 
-export type UpdateCategoryInput = {
+export type TitleInput = {
+  title?: Maybe<Scalars['String']>,
+};
+
+export type Titles = {
+   __typename?: 'Titles',
+  title?: Maybe<Scalars['String']>,
+  id: Scalars['ID'],
+  created_at: Scalars['DateTime'],
+  updated_at: Scalars['DateTime'],
+};
+
+export type UpdateProjectInput = {
   where?: Maybe<InputId>,
-  data?: Maybe<EditCategoryInput>,
+  data?: Maybe<EditProjectInput>,
 };
 
-export type UpdateCategoryPayload = {
-   __typename?: 'updateCategoryPayload',
-  category?: Maybe<Categories>,
+export type UpdateProjectPayload = {
+   __typename?: 'updateProjectPayload',
+  project?: Maybe<Projects>,
 };
 
-export type UpdateRestaurantInput = {
+export type UpdateProjectTypeInput = {
   where?: Maybe<InputId>,
-  data?: Maybe<EditRestaurantInput>,
+  data?: Maybe<EditProjectTypeInput>,
 };
 
-export type UpdateRestaurantPayload = {
-   __typename?: 'updateRestaurantPayload',
-  restaurant?: Maybe<Restaurant>,
+export type UpdateProjectTypePayload = {
+   __typename?: 'updateProjectTypePayload',
+  projectType?: Maybe<ProjectType>,
 };
 
 export type UpdateRoleInput = {
@@ -427,6 +494,16 @@ export type UpdateRoleInput = {
 export type UpdateRolePayload = {
    __typename?: 'updateRolePayload',
   role?: Maybe<UsersPermissionsRole>,
+};
+
+export type UpdateTitleInput = {
+  where?: Maybe<InputId>,
+  data?: Maybe<EditTitleInput>,
+};
+
+export type UpdateTitlePayload = {
+   __typename?: 'updateTitlePayload',
+  title?: Maybe<Titles>,
 };
 
 export type UpdateUserInput = {

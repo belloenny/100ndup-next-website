@@ -1,16 +1,11 @@
-import * as React from 'react'
-import axios from 'axios'
-import Layout from '../components/Layout'
-import { NextPage } from 'next';
+import * as React from "react"
+import Layout from "../components/Layout"
+import { NextPage } from "next"
+import styled from "styled-components"
+import { motion, useViewportScroll } from "framer-motion"
 
-
-const API_URL = 'https://hndup-api-cms.herokuapp.com/graphql'
-
-interface Props {
-    data: any
-}
-
-const IndexPage: NextPage<Props> = ({ data }) => {
+const IndexPage: NextPage = () => {
+    const { scrollYProgress } = useViewportScroll()
     return (
         <Layout>
             <div className="hero-section">
@@ -25,13 +20,6 @@ const IndexPage: NextPage<Props> = ({ data }) => {
                             </strong>
                         </h1>
                     </div>
-                    {/* <img
-                        src="https://uploads-ssl.webflow.com/5e3fd2b4289861757914c9d9/5e452e532773604ca3ce1fa8_Rectangle%20Copy%209.png"
-                        width="448"
-                        sizes="(max-width: 479px) 100vw, 447.9963073730469px"
-                        alt=""
-                        className="image"
-                    /> */}
                 </div>
             </div>
             <style jsx>
@@ -90,29 +78,5 @@ const IndexPage: NextPage<Props> = ({ data }) => {
         </Layout>
     )
 }
-// IndexPage.getInitialProps = async () => {
-//     const res  = await axios.post(API_URL,{
-//         query: `      
-//         {
-//             restaurants {
-//               Name
-//               categories{
-//                 id
-//                 name
-//               }
-//               picture {
-//                 url
-//               }
-//               Description
-//             }
-//          }
-//     `,
-//     },{ headers: {
-//         'Content-Type': 'application/json'
-//     }})
 
-//     return {
-//         data: res.data.data.restaurants
-//     }
-// }
 export default IndexPage

@@ -35,6 +35,12 @@ const Layout: React.FC<Props> = ({children}) => {
                     font-size: 47px !important;
                     font-weight: 900 !important;
                     line-height: 70px;
+                    
+                }
+                p {
+                    font-size: 16px;
+                    line-height: 40px;
+                    font-weight: 100;
                 }
                
             `}</style>
