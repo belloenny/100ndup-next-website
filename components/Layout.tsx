@@ -1,5 +1,7 @@
 import * as React from "react"
 import Head from "next/head"
+import { Navbar } from "./Navbar"
+import { Footer } from "./Footer"
 
 interface Props {
     children?: React.ReactNode
@@ -20,7 +22,9 @@ const Layout: React.FC<Props> = ({ children,ref }) => {
                     rel="stylesheet"
                 />
             </Head>
+            <Navbar/>
             <main ref={ref}>{children}</main>
+            <Footer/>
             <style jsx global>{`
                 * {
                     box-sizing: border-box;

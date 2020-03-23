@@ -416,10 +416,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _global_main_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../global/main.css */ "./global/main.css");
 /* harmony import */ var _global_main_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_global_main_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/Users/mac/Documents/work/100ndup/website/pages/_app.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 
 
 
@@ -431,10 +434,25 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       Component,
       pageProps
     } = this.props;
-    return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Component, _extends({}, pageProps, {
+    return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 10
+        lineNumber: 11
+      },
+      __self: this
+    }, __jsx("link", {
+      rel: "shortcut icon",
+      type: "image/x-icon",
+      href: "/static/favicon_yNz_icon.ico",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      },
+      __self: this
+    })), __jsx(Component, _extends({}, pageProps, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
       },
       __self: this
     })));
@@ -455,6 +473,17 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
 
 module.exports = __webpack_require__(/*! private-next-pages/_app.tsx */"./pages/_app.tsx");
 
+
+/***/ }),
+
+/***/ "next/head":
+/*!****************************!*\
+  !*** external "next/head" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/head");
 
 /***/ }),
 

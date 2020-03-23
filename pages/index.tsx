@@ -4,6 +4,7 @@ import { NextPage } from "next"
 import { motion } from "framer-motion"
 import { useIntersectionObserver } from "../hooks/intersectionObserver"
 
+
 const IndexPage: NextPage = () => {
     const root = React.useRef()
     const target = React.useRef()
@@ -21,31 +22,6 @@ const IndexPage: NextPage = () => {
     return (
         <Layout ref={root}>
             <div>
-                <div className="_100-brand">
-                    <img
-                        src="https://uploads-ssl.webflow.com/5e3fd2b4289861757914c9d9/5e785d65bc626284c68cc724_Logo-1-2.svg"
-                        alt=""
-                    />
-                </div>
-                <motion.div
-                    initial={{ y: -30, opacity: 0 }}
-                    animate={{
-                        y: 0,
-                        opacity: 1,
-                        transition: { duration: 0.5, ease: "easeIn" }
-                    }}
-                    className="nav"
-                >
-                    <a href="#" className="_100-nav-link">
-                        Our Work
-                    </a>
-                    <a href="#" className="_100-nav-link">
-                        About Us
-                    </a>
-                    <a href="#" className="_100-btn w-button">
-                        Contact us
-                    </a>
-                </motion.div>
                 <div className="_100-hero-section">
                     <motion.h1
                         initial={{ opacity: 0, y: 1000, scale: 5 }}
@@ -171,13 +147,8 @@ const IndexPage: NextPage = () => {
                         </a>
                     </div>
                 </div>
-                <div className="footer">
-                    <img
-                        src="https://uploads-ssl.webflow.com/5e3fd2b4289861757914c9d9/5e3fdc9eb8df23ee99a8a3cb_Logo-1%20Copy.svg"
-                        alt=""
-                    />
-                    <p className="footer-text">2020 Ounjey,</p>
-                </div>
+                
+                
             </div>
             <style jsx>
                 {`
@@ -453,30 +424,6 @@ const IndexPage: NextPage = () => {
                         color: #2b2c30;
                     }
 
-                    ._100-btn {
-                        margin-left: 122px;
-                        padding-right: 37px;
-                        padding-bottom: 10px;
-                        padding-top: 10px;
-                        padding-left: 38px;
-                        border: 0.5px solid #000;
-                        border-radius: 4px;
-                        background-color: transparent;
-                        -webkit-transition: color 500ms ease,
-                            background-color 200ms ease-in-out;
-                        transition: color 500ms ease,
-                            background-color 200ms ease-in-out;
-                        color: #2b2c30;
-                        font-size: 20px;
-                        font-weight: 300;
-                    }
-
-                    ._100-btn:hover {
-                        border-style: solid;
-                        background-color: #2b2c30;
-                        color: #fff;
-                    }
-
                     ._100-btn.form {
                         border-style: solid;
                         background-color: #2b2c30;
@@ -577,48 +524,6 @@ const IndexPage: NextPage = () => {
                         background-color: transparent;
                     }
 
-                    ._100-brand {
-                        position: fixed;
-                        left: 0%;
-                        top: 0%;
-                        right: auto;
-                        bottom: auto;
-                        display: -webkit-box;
-                        display: -webkit-flex;
-                        display: -ms-flexbox;
-                        display: flex;
-                        width: 100px;
-                        height: 100px;
-                        -webkit-box-orient: vertical;
-                        -webkit-box-direction: normal;
-                        -webkit-flex-direction: column;
-                        -ms-flex-direction: column;
-                        flex-direction: column;
-                        -webkit-box-pack: center;
-                        -webkit-justify-content: center;
-                        -ms-flex-pack: center;
-                        justify-content: center;
-                        -webkit-box-align: center;
-                        -webkit-align-items: center;
-                        -ms-flex-align: center;
-                        align-items: center;
-                        background-color: #000;
-                    }
-
-                    ._100-nav-link {
-                        margin-left: 94px;
-                        -webkit-transition: opacity 200ms ease;
-                        transition: opacity 200ms ease;
-                        color: #2b2c30;
-                        font-size: 20px;
-                        font-weight: 300;
-                        text-decoration: none;
-                    }
-
-                    ._100-nav-link:hover {
-                        text-decoration: underline;
-                    }
-
                     ._100-hero-section {
                         position: relative;
                         max-width: 1080px;
@@ -703,11 +608,50 @@ const IndexPage: NextPage = () => {
                         background-size: auto;
                         background-repeat: no-repeat;
                     }
+                    ._100-nav-link {
+                        margin-left: 94px;
+                        -webkit-transition: opacity 200ms ease;
+                        transition: opacity 200ms ease;
+                        color: #2b2c30;
+                        font-size: 20px;
+                        font-weight: 300;
+                        text-decoration: none;
+                    }
+
+                    ._100-nav-link:hover {
+                        text-decoration: underline;
+                    }
+                    ._100-btn {
+                        margin-left: 122px;
+                        padding-right: 37px;
+                        padding-bottom: 10px;
+                        padding-top: 10px;
+                        padding-left: 38px;
+                        border: 0.5px solid #000;
+                        border-radius: 4px;
+                        background-color: transparent;
+                        -webkit-transition: color 500ms ease,
+                            background-color 200ms ease-in-out;
+                        transition: color 500ms ease,
+                            background-color 200ms ease-in-out;
+                        color: #2b2c30;
+                        font-size: 20px;
+                        font-weight: 300;
+                    }
+
+                    ._100-btn:hover {
+                        border-style: solid;
+                        background-color: #2b2c30;
+                        color: #fff;
+                    }
 
                     @media screen and (max-width: 991px) {
                         ._100-container {
                             padding-right: 28px;
                             padding-left: 28px;
+                        }
+                        ._100-btn {
+                            margin-left: 81px;
                         }
 
                         .nav-container {
@@ -774,10 +718,6 @@ const IndexPage: NextPage = () => {
                             align-items: stretch;
                         }
 
-                        ._100-btn {
-                            margin-left: 81px;
-                        }
-
                         .heading {
                             font-size: 50px;
                         }
@@ -821,7 +761,13 @@ const IndexPage: NextPage = () => {
                         .footer-2 {
                             padding: 40px 20px;
                         }
-
+                        ._100-nav-link {
+                            margin-left: 36px;
+                            font-size: 17px;
+                        }
+                        ._100-btn {
+                            margin-left: 36px;
+                        }
                         .rest {
                             -webkit-box-orient: vertical;
                             -webkit-box-direction: reverse;
@@ -854,11 +800,6 @@ const IndexPage: NextPage = () => {
                             font-size: 20px;
                             line-height: 37px;
                             text-align: left;
-                        }
-
-                        ._100-nav-link {
-                            margin-left: 36px;
-                            font-size: 17px;
                         }
 
                         ._100-hero-text {
@@ -896,6 +837,10 @@ const IndexPage: NextPage = () => {
                             -webkit-align-items: center;
                             -ms-flex-align: center;
                             align-items: center;
+                        }
+                        ._100-btn {
+                            margin-left: 0px;
+                            font-size: 16px;
                         }
 
                         .cta-section.left {
@@ -951,11 +896,6 @@ const IndexPage: NextPage = () => {
 
                         .text-field {
                             width: 260px;
-                        }
-
-                        ._100-btn {
-                            margin-left: 0px;
-                            font-size: 16px;
                         }
 
                         ._100-client {
