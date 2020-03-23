@@ -1,48 +1,56 @@
-import * as React from 'react'
-import Head from "next/head";
-import Navbar from './Navbar';
+import * as React from "react"
+import Head from "next/head"
 
 interface Props {
     children?: React.ReactNode
+    ref?: React.LegacyRef<HTMLElement> 
 }
 
-const Layout: React.FC<Props> = ({children}) => {
+const Layout: React.FC<Props> = ({ children,ref }) => {
     return (
         <React.Fragment>
-            <Navbar/>
             <Head>
                 <title>Hundred and up | creative agency</title>
-                <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"/>
-                <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
+                <link
+                    rel="stylesheet"
+                    href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+                />
+                <link
+                    href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap"
+                    rel="stylesheet"
+                />
             </Head>
-            <main>
-                {children}
-            </main>
+            <main ref={ref}>{children}</main>
             <style jsx global>{`
                 * {
                     box-sizing: border-box;
                 }
                 body {
-                    font-family: 'Roboto', sans-serif;
-                    b
+                    background-color: transparent;
+                    font-family: "Roboto", sans-serif;
+                    color: #2b2c30;
+                    font-size: 14px;
+                    line-height: 20px;
+                    font-weight: 400;
                 }
-                main {
-                    max-width: 960px;
-                    margin: 0px auto;
-                    overflow: hidden;
-                }
+
                 h1 {
-                    font-size: 47px !important;
-                    font-weight: 900 !important;
-                    line-height: 70px;
-                    
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    font-size: 38px;
+                    line-height: 44px;
+                    font-weight: 700;
                 }
-                p {
-                    font-size: 16px;
-                    line-height: 40px;
-                    font-weight: 100;
+
+                a {
+                    text-decoration: none;
                 }
-               
+
+                ul {
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    padding-left: 0px;
+                }
             `}</style>
         </React.Fragment>
     )
