@@ -36,7 +36,10 @@ const Layout: React.FC<Props> = ({ children,ref }) => {
                     font-size: 14px;
                     line-height: 20px;
                     font-weight: 400;
+                    margin: 0;
+                    padding: 0;
                 }
+                
 
                 h1 {
                     margin-top: 0px;

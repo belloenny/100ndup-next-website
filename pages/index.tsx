@@ -21,7 +21,7 @@ const IndexPage: NextPage = () => {
 
     return (
         <Layout ref={root}>
-            <div>
+            <div className="body-3">
                 <div className="_100-hero-section">
                     <motion.h1
                         initial={{ opacity: 0, y: 1000, scale: 5 }}
@@ -152,6 +152,12 @@ const IndexPage: NextPage = () => {
             </div>
             <style jsx>
                 {`
+                .body-3 {
+                        background-image: url("https://uploads-ssl.webflow.com/5e3fd2b4289861757914c9d9/5e786cd31ede362d67bc8e31_LIGHT%201.png");
+                        background-position: 100% 0%;
+                        background-size: auto;
+                        background-repeat: no-repeat;
+                    }
                     ._100-container {
                         position: relative;
                         margin-top: 172px;
@@ -335,40 +341,6 @@ const IndexPage: NextPage = () => {
                         object-position: 0% 50%;
                     }
 
-                    .nav {
-                        position: absolute;
-                        left: auto;
-                        top: 0%;
-                        right: 0%;
-                        bottom: auto;
-                        display: -webkit-box;
-                        display: -webkit-flex;
-                        display: -ms-flexbox;
-                        display: flex;
-                        width: 80%;
-                        height: 100px;
-                        margin-bottom: 10px;
-                        padding-right: 40px;
-                        padding-left: 0px;
-                        float: right;
-                        -webkit-box-pack: end;
-                        -webkit-justify-content: flex-end;
-                        -ms-flex-pack: end;
-                        justify-content: flex-end;
-                        -webkit-box-align: center;
-                        -webkit-align-items: center;
-                        -ms-flex-align: center;
-                        align-items: center;
-                        color: #2b2c30;
-                        font-size: 16px;
-                        font-weight: 400;
-                        text-decoration: none;
-                    }
-
-                    .nav:hover {
-                        text-decoration: none;
-                    }
-
                     .footer-2 {
                         margin-top: 265px;
                         padding-top: 60px;
@@ -474,6 +446,8 @@ const IndexPage: NextPage = () => {
                         color: #2b2c30;
                         font-size: 24px;
                         text-decoration: underline;
+                        cursor: pointer;
+                        
                     }
                     ._100-light-text {
                         font-weight: 100;
@@ -527,9 +501,10 @@ const IndexPage: NextPage = () => {
                     ._100-hero-section {
                         position: relative;
                         max-width: 1080px;
-                        margin-top: 17%;
                         margin-right: auto;
                         margin-left: auto;
+                        
+                        padding-top: 17%;
                     }
 
                     .heading-2 {
@@ -658,6 +633,9 @@ const IndexPage: NextPage = () => {
                             max-width: none;
                             padding-right: 28px;
                             padding-left: 28px;
+                        }
+                        .body-3 {
+                            background-image: none;
                         }
 
                         .cta-section {
