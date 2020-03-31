@@ -12,12 +12,15 @@
   "dependencies": {
     "@graphql-codegen/add": "^1.12.2",
     "@types/react": "^16.9.19",
+    "@types/react-images": "^0.5.1",
     "@types/styled-components": "^5.0.1",
     "axios": "^0.19.2",
     "framer-motion": "^1.9.1",
-    "next": "^9.2.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "latest",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-images": "^1.1.0",
     "react-markdown": "^4.3.1",
     "styled-components": "^5.0.1",
     "swr": "^0.1.17"

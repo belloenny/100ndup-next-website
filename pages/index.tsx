@@ -3,7 +3,7 @@ import Layout from "../components/Layout"
 import { NextPage } from "next"
 import { motion } from "framer-motion"
 import { useIntersectionObserver } from "../hooks/intersectionObserver"
-
+import Link from "next/link"
 
 const IndexPage: NextPage = () => {
     const root = React.useRef()
@@ -99,9 +99,11 @@ const IndexPage: NextPage = () => {
                         <motion.div className="_100-projects-catgerories">
                             <div>
                                 <h1 className="heading">Design.</h1>
-                                <a href="#" className="_100-link">
-                                    View Projects
-                                </a>
+                                <Link href="/projects/[pid]" as={`/projects/${1}`}>
+                                    <a  className="_100-link">
+                                        View Projects
+                                    </a>
+                                </Link>
                             </div>
                             <div className="div-block">
                                 <p className="paragraph">
@@ -113,9 +115,11 @@ const IndexPage: NextPage = () => {
                         <motion.div className="_100-projects-catgerories">
                             <div>
                                 <h1 className="heading">Development.</h1>
-                                <a href="#" className="_100-link">
-                                    View Projects
-                                </a>
+                                <Link href="/projects/[pid]" as={`/projects/${3}`}>
+                                    <a  className="_100-link">
+                                        View Projects
+                                    </a>
+                                </Link>
                             </div>
                             <div className="div-block">
                                 <p className="paragraph">
@@ -126,14 +130,16 @@ const IndexPage: NextPage = () => {
                         </motion.div>
                         <motion.div className="_100-projects-catgerories">
                             <div>
-                                <h1 className="heading">Photography.</h1>
-                                <a href="#" className="_100-link">
-                                    View Projects
-                                </a>
+                                <h1 className="heading">3d Design.</h1>
+                                <Link href="/projects/[pid]" as={`/projects/${2}`}>
+                                    <a  className="_100-link">
+                                        View Projects
+                                    </a>
+                                </Link>
                             </div>
                             <div className="div-block">
                                 <p className="paragraph">
-                                    Photography and videography.
+                                    We create beautiful 3d virtual experiences
                                 </p>
                             </div>
                         </motion.div>
@@ -147,12 +153,10 @@ const IndexPage: NextPage = () => {
                         </a>
                     </div>
                 </div>
-                
-                
             </div>
             <style jsx>
                 {`
-                .body-3 {
+                    .body-3 {
                         background-image: url("https://uploads-ssl.webflow.com/5e3fd2b4289861757914c9d9/5e786cd31ede362d67bc8e31_LIGHT%201.png");
                         background-position: 100% 0%;
                         background-size: auto;
@@ -447,7 +451,6 @@ const IndexPage: NextPage = () => {
                         font-size: 24px;
                         text-decoration: underline;
                         cursor: pointer;
-                        
                     }
                     ._100-light-text {
                         font-weight: 100;
@@ -503,7 +506,7 @@ const IndexPage: NextPage = () => {
                         max-width: 1080px;
                         margin-right: auto;
                         margin-left: auto;
-                        
+
                         padding-top: 17%;
                     }
 
