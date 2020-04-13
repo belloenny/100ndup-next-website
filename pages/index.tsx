@@ -1,928 +1,1062 @@
 import * as React from "react"
-import Layout from "../components/Layout"
 import { NextPage } from "next"
-import { motion } from "framer-motion"
-import { useIntersectionObserver } from "../hooks/intersectionObserver"
+import Head from 'next/head'
 import Link from "next/link"
 
 const IndexPage: NextPage = () => {
-    const root = React.useRef()
-    const target = React.useRef()
-    const [isThingIntersecting, setThingIntersecting] = React.useState(false)
-
-    useIntersectionObserver({
-        root,
-        target,
-        onIntersect: ([{ isIntersecting }]) => {
-            setThingIntersecting(isIntersecting)
-            console.log(`is Intersecting: ${isThingIntersecting}`)
+    React.useEffect(() => {
+        const webflow = document.createElement("script");
+        const jquery = document.createElement("script");
+        jquery.src = "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5e905ead4576bced72b55425";
+        jquery.type = "text/javascript";
+        jquery.integrity = "sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=";
+        jquery.crossOrigin= "anonymous"
+        webflow.src = "static/webflow.js";
+        document.body.appendChild(jquery);
+        document.body.appendChild(webflow); 
+        return () => {
+          document.body.removeChild(jquery);
+          document.body.removeChild(webflow);
         }
-    })
-
-    return (
-        <Layout ref={root}>
-            <div className="body-3">
-                <div className="_100-hero-section">
-                    <motion.h1
-                        initial={{ opacity: 0, y: 1000, scale: 5 }}
-                        animate={{
-                            opacity: 1,
-                            y: 0,
-                            scale: 1,
-                            transition: {
-                                duration: 0.9,
-                                ease: "easeInOut"
-                            }
-                        }}
-                        className="_100-hero-text"
-                    >
-                        100ndup.
-                    </motion.h1>
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1, transition: { duration: 0.4 } }}
-                        className="_100-link-section"
-                    >
-                        We help companies gain a competitive advantage in a
-                        growing digital world.
-                        <span className="_100-light-text">
-                            Check out our work below or learn more about
-                        </span>
-                        <a className="_100-link home">What We do</a>
-                    </motion.p>
+    }, [])
+      return (
+        <>
+        <Head>
+            <title>Hundred and up creative agency</title>
+            <meta name="description" content="creative agency with a focus on UX "/>
+        </Head>
+        <div>
+            <div className="scroll-indicator">
+                <div
+                    data-w-id="960a90f3-1094-0835-fc71-773b250846d3"
+                    data-animation-type="lottie"
+                    data-src="https://uploads-ssl.webflow.com/5e905ead4576bced72b55425/5e907366d658d40127653edd_16724-black-mouse-scroll.json"
+                    data-loop={1}
+                    data-direction={1}
+                    data-autoplay={1}
+                    data-is-ix2-target={0}
+                    data-renderer="svg"
+                    data-default-duration="2.9696361820138772"
+                    data-duration={0}
+                    className="lottie-animation-3"
+                />
+            </div>
+            <div className="nav">
+                <div className="nav-container">
+                    <a href="#" className="brand w-inline-block">
+                        <img
+                            src="https://uploads-ssl.webflow.com/5e905ead4576bced72b55425/5e9060d6d51614fd85de7a27_Group%204.svg"
+                            alt=""
+                        />
+                    </a>
+                    <Link href="/about">
+                      <a className="_100-btn w-button">
+                          Contact Us
+                      </a>
+                    </Link>  
                 </div>
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={
-                        isThingIntersecting && {
-                            opacity: 1,
-                            transition: { duration: 0.5, ease: "easeIn" }
-                        }
-                    }
-                    className="_100-clients-section"
-                    ref={target}
-                >
-                    <div className="_100-client-container">
-                        <h3 className="_100-clients-section-title">
-                            Previous Clients
-                        </h3>
-                        <div className="_100-client">
-                            <img
-                                src="https://uploads-ssl.webflow.com/5e3fd2b4289861757914c9d9/5e786eb94c71bd617648b5e7_connectcoffee.png"
-                                alt=""
-                                className="_100-client-img"
-                            />
-                            <img
-                                src="https://uploads-ssl.webflow.com/5e3fd2b4289861757914c9d9/5e786eb70a930ffde8cb2d49_aftaeats.png"
-                                alt=""
-                                className="_100-client-img"
-                            />
-                            <img
-                                src="https://uploads-ssl.webflow.com/5e3fd2b4289861757914c9d9/5e786eb80014e66a331e30f6_avant.png"
-                                alt=""
-                                className="_100-client-img"
-                            />
-                            <img
-                                src="https://uploads-ssl.webflow.com/5e3fd2b4289861757914c9d9/5e786eb8bc62621bf28d169d_Elias.png"
-                                alt=""
-                                className="_100-client-img"
+            </div>
+            <div className="scroll-sequence">
+                <div className="sequence-container">
+                    <div className="animation-sequence">
+                        <div className="lottie-animation-container">
+                            <div
+                                data-w-id="ab6d4a8d-92d7-fde6-b110-d12c29e58798"
+                                data-animation-type="lottie"
+                                data-src="https://uploads-ssl.webflow.com/5e905ead4576bced72b55425/5e918a3406600f6386cf0a57_animation.json"
+                                data-loop={0}
+                                data-direction={1}
+                                data-autoplay={0}
+                                data-is-ix2-target={1}
+                                data-renderer="canvas"
+                                data-default-duration="3.3333333333333335"
+                                data-duration={0}
+                                className="lottie-animation-2"
                             />
                         </div>
                     </div>
-                </motion.div>
-                <div className="_100-projects-section">
-                    <div className="_100-client-container">
-                        <h3 className="_100-clients-section-title">
-                            What we Do
-                            <br />‍
-                        </h3>
-                        <motion.div className="_100-projects-catgerories">
-                            <div>
-                                <h1 className="heading">Design.</h1>
-                                <Link href="/projects/[pid]" as={`/projects/${1}`}>
-                                    <a  className="_100-link">
-                                        View Projects
-                                    </a>
-                                </Link>
-                            </div>
-                            <div className="div-block">
-                                <p className="paragraph">
-                                    We do everthing digital design. Web Design,
-                                    UI design, User Experience Design
-                                </p>
-                            </div>
-                        </motion.div>
-                        <motion.div className="_100-projects-catgerories">
-                            <div>
-                                <h1 className="heading">Development.</h1>
-                                <Link href="/projects/[pid]" as={`/projects/${3}`}>
-                                    <a  className="_100-link">
-                                        View Projects
-                                    </a>
-                                </Link>
-                            </div>
-                            <div className="div-block">
-                                <p className="paragraph">
-                                    We convert  beautiful designs into an actual
-                                    working product
-                                </p>
-                            </div>
-                        </motion.div>
-                        <motion.div className="_100-projects-catgerories">
-                            <div>
-                                <h1 className="heading">3d Design.</h1>
-                                <Link href="/projects/[pid]" as={`/projects/${2}`}>
-                                    <a  className="_100-link">
-                                        View Projects
-                                    </a>
-                                </Link>
-                            </div>
-                            <div className="div-block">
-                                <p className="paragraph">
-                                    We create beautiful 3d virtual experiences
-                                </p>
-                            </div>
-                        </motion.div>
-                    </div>
                 </div>
-                <div className="_100-cta-section">
-                    <div className="_100-client-container flex">
-                        <h1 className="heading-3">Ready to talk?</h1>
-                        <a href="#" className="_100-btn final w-button">
-                            Contact Us
-                        </a>
+            </div>
+            <div className="section-identifier">
+                <a id="#home-section" onClick={e => e.preventDefault()} className="identifier-link">
+                    Home
+                </a>
+                <a id="#clients-section" className="identifier-link">
+                    Clients
+                </a>
+                <a id="#what-we-do" className="identifier-link">
+                    Works
+                </a>
+            </div>
+            <div
+                id="home-section"
+                data-w-id="41f1833b-7ce1-7e8d-cb2e-10c779c76dfc"
+                className="hero-section"
+            >
+                <div className="hero-scroll-container">
+                    <div className="sticky-container">
+                        <div
+                            data-w-id="275cdeef-1d70-dc1e-12eb-5b5fdaa0b01a"
+                            className="hero-bullet-points"
+                        >
+                            <p className="hero-bullet-text">
+                                Creators at The Core
+                            </p>
+                        </div>
+                        <div
+                            data-w-id="99a01576-f254-1396-4e5f-ccab0c732a79"
+                            className="hero-bullet-points"
+                        >
+                            <p className="hero-bullet-text">
+                                Hands on Approach
+                            </p>
+                        </div>
+                        <div
+                            data-w-id="40faac9d-d965-823c-818a-22cdb29f2cc8"
+                            className="hero-bullet-points"
+                        >
+                            <p className="hero-bullet-text">UX Oriented</p>
+                        </div>
+                        <div
+                            data-w-id="eacd76f0-9762-53f7-c4cb-3991c79aa629"
+                            className="hero-bullet-points"
+                        >
+                            <p className="hero-bullet-text">Swift</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <style jsx>
-                {`
-                    .body-3 {
-                        background-image: url("https://uploads-ssl.webflow.com/5e3fd2b4289861757914c9d9/5e786cd31ede362d67bc8e31_LIGHT%201.png");
-                        background-position: 100% 0%;
-                        background-size: auto;
-                        background-repeat: no-repeat;
-                    }
-                    ._100-container {
-                        position: relative;
-                        margin-top: 172px;
-                    }
-
-                    .cta-btn {
-                        height: 46px;
-                        padding: 11px 32px;
-                        background-color: #eb564f;
-                        -webkit-transition: background-color 200ms ease-in-out;
-                        transition: background-color 200ms ease-in-out;
-                        font-size: 20px;
-                        line-height: 23px;
-                        font-weight: 700;
-                    }
-
-                    .cta-btn:hover {
-                        background-color: rgba(235, 86, 79, 0.78);
-                        color: #fff;
-                    }
-
-                    .cta-btn.second {
-                        width: 207px;
-                        margin-top: 65px;
-                        padding-right: 40px;
-                        padding-left: 40px;
-                        background-color: #fff;
-                        color: #2b2c30;
-                    }
-
-                    .cta-btn.second:hover {
-                        background-color: #eb564f;
-                        color: #fff;
-                    }
-
-                    ._100-nav {
-                        position: absolute;
-                        left: 0%;
-                        top: 0%;
-                        right: 0%;
-                        bottom: auto;
-                        clear: none;
-                        background-color: transparent;
-                    }
-
-                    .nav-link {
-                        margin-right: 36px;
-                        color: #fff;
-                        font-size: 20px;
-                        line-height: 23px;
-                        font-weight: 300;
-                    }
-
-                    .nav-container {
-                        max-width: 1080px;
-                    }
-
-                    .nav-menu {
-                        position: relative;
-                        display: -webkit-box;
-                        display: -webkit-flex;
-                        display: -ms-flexbox;
-                        display: flex;
-                        -webkit-box-orient: horizontal;
-                        -webkit-box-direction: normal;
-                        -webkit-flex-direction: row;
-                        -ms-flex-direction: row;
-                        flex-direction: row;
-                        -webkit-box-align: center;
-                        -webkit-align-items: center;
-                        -ms-flex-align: center;
-                        align-items: center;
-                    }
-
-                    .img-container {
-                        width: 80%;
-                        height: 447px;
-                        background-image: -webkit-gradient(
-                                linear,
-                                left top,
-                                left bottom,
-                                from(rgba(0, 0, 0, 0.5)),
-                                to(rgba(0, 0, 0, 0.5))
-                            ),
-                            url("https://uploads-ssl.webflow.com/5e3fd2b4289861757914c9d9/5e4529e540b6e6acfcb7a5f1_photo-studio-with-white-wooden-framed-wall-mirror-134469.png");
-                        background-image: linear-gradient(
-                                180deg,
-                                rgba(0, 0, 0, 0.5),
-                                rgba(0, 0, 0, 0.5)
-                            ),
-                            url("https://uploads-ssl.webflow.com/5e3fd2b4289861757914c9d9/5e4529e540b6e6acfcb7a5f1_photo-studio-with-white-wooden-framed-wall-mirror-134469.png");
-                        background-position: 0px 0px, 100% 50%;
-                        background-size: auto, cover;
-                    }
-
-                    .img-container.right {
-                        float: right;
-                        background-image: -webkit-gradient(
-                                linear,
-                                left top,
-                                left bottom,
-                                from(transparent),
-                                to(transparent)
-                            ),
-                            url("https://uploads-ssl.webflow.com/5e3fd2b4289861757914c9d9/5e4529e6a790ac863be7fafb_person-holding-camera-with-lens-facing-towards-man-wearing-a-3206167.png");
-                        background-image: linear-gradient(
-                                180deg,
-                                transparent,
-                                transparent
-                            ),
-                            url("https://uploads-ssl.webflow.com/5e3fd2b4289861757914c9d9/5e4529e6a790ac863be7fafb_person-holding-camera-with-lens-facing-towards-man-wearing-a-3206167.png");
-                    }
-
-                    .cta-section {
-                        position: absolute;
-                        left: auto;
-                        top: 0%;
-                        right: 0%;
-                        bottom: 0%;
-                        display: -webkit-box;
-                        display: -webkit-flex;
-                        display: -ms-flexbox;
-                        display: flex;
-                        -webkit-box-orient: vertical;
-                        -webkit-box-direction: normal;
-                        -webkit-flex-direction: column;
-                        -ms-flex-direction: column;
-                        flex-direction: column;
-                        -webkit-box-pack: center;
-                        -webkit-justify-content: center;
-                        -ms-flex-pack: center;
-                        justify-content: center;
-                        -webkit-box-align: start;
-                        -webkit-align-items: flex-start;
-                        -ms-flex-align: start;
-                        align-items: flex-start;
-                    }
-
-                    .cta-section.left {
-                        left: 0%;
-                        top: 0%;
-                        right: auto;
-                        bottom: 0%;
-                    }
-
-                    .project-heading {
-                        color: #fff;
-                        font-size: 82px;
-                        line-height: 87px;
-                        font-weight: 900;
-                    }
-
-                    .footer-flex-container {
-                        display: -webkit-box;
-                        display: -webkit-flex;
-                        display: -ms-flexbox;
-                        display: flex;
-                        margin-bottom: 40px;
-                        -webkit-box-pack: justify;
-                        -webkit-justify-content: space-between;
-                        -ms-flex-pack: justify;
-                        justify-content: space-between;
-                        text-align: left;
-                    }
-
-                    .footer-logo-link {
-                        max-height: 60px;
-                        min-width: 60px;
-                        -webkit-box-flex: 0;
-                        -webkit-flex: 0 auto;
-                        -ms-flex: 0 auto;
-                        flex: 0 auto;
-                    }
-
-                    .footer-image {
-                        width: 100%;
-                        height: 100%;
-                        -o-object-fit: contain;
-                        object-fit: contain;
-                        -o-object-position: 0% 50%;
-                        object-position: 0% 50%;
-                    }
-
-                    .footer-2 {
-                        margin-top: 265px;
-                        padding-top: 60px;
-                        padding-bottom: 40px;
-                        -webkit-box-align: start;
-                        -webkit-align-items: flex-start;
-                        -ms-flex-align: start;
-                        align-items: flex-start;
-                        background-color: #fff;
-                        text-align: center;
-                    }
-
-                    .footer-heading {
-                        margin-top: 0px;
-                        margin-bottom: 20px;
-                        color: #2b2c30;
-                        font-size: 16px;
-                        line-height: 1.5;
-                    }
-
-                    .text-field {
-                        width: 390px;
-                        height: 60px;
-                        border: 1px none #000;
-                        background-color: #2b2c30;
-                        background-image: url("https://uploads-ssl.webflow.com/5e3fd2b4289861757914c9d9/5e451aad8e9f314060377566_mail.svg");
-                        background-position: 95% 50%;
-                        background-size: auto;
-                        background-repeat: no-repeat;
-                        color: #fff;
-                    }
-
-                    .field-label {
-                        font-size: 16px;
-                    }
-
-                    .rest {
-                        display: -webkit-box;
-                        display: -webkit-flex;
-                        display: -ms-flexbox;
-                        display: flex;
-                        width: 100%;
-                        -webkit-box-pack: justify;
-                        -webkit-justify-content: space-between;
-                        -ms-flex-pack: justify;
-                        justify-content: space-between;
-                    }
-
-                    .body {
-                        border-style: solid;
-                        border-width: 1px;
-                        background-color: #fff;
-                        color: #2b2c30;
-                    }
-
-                    ._100-btn.form {
-                        border-style: solid;
-                        background-color: #2b2c30;
-                        color: #fff;
-                    }
-
-                    ._100-btn.form:hover {
-                        background-color: transparent;
-                        color: #2b2c30;
-                    }
-
-                    ._100-btn.final {
-                        margin-top: 41px;
-                        margin-left: 0px;
-                    }
-
-                    ._100-client {
-                        display: -ms-grid;
-                        display: grid;
-                        margin-top: 92px;
-                        justify-items: center;
-                        -webkit-box-align: center;
-                        -webkit-align-items: center;
-                        -ms-flex-align: center;
-                        align-items: center;
-                        grid-auto-columns: 1fr;
-                        grid-column-gap: 16px;
-                        grid-row-gap: 16px;
-                        -ms-grid-columns: 1fr 1fr 1fr 1fr;
-                        grid-template-columns: 1fr 1fr 1fr 1fr;
-                        -ms-grid-rows: auto;
-                        grid-template-rows: auto;
-                    }
-
-                    ._100-client-img {
-                        -webkit-filter: saturate(0%);
-                        filter: saturate(0%);
-                    }
-
-                    .heading {
-                        font-size: 55px;
-                        font-weight: 700;
-                    }
-
-                    ._100-link {
-                        display: block;
-                        margin-top: 78px;
-                        color: #2b2c30;
-                        font-size: 24px;
-                        text-decoration: underline;
-                        cursor: pointer;
-                    }
-                    ._100-light-text {
-                        font-weight: 100;
-                        margin-left: 10px;
-                    }
-
-                    .home {
-                        margin-top: 0;
-                        display: inline-block;
-                        margin-left: 10px;
-                        cursor: "pointer";
-                    }
-
-                    .div-block {
-                        font-size: 24px;
-                        line-height: 42.5px;
-                        font-weight: 300;
-                    }
-
-                    .paragraph {
-                        width: 588px;
-                        margin-left: 75px;
-                    }
-
-                    .footer {
-                        display: -webkit-box;
-                        display: -webkit-flex;
-                        display: -ms-flexbox;
-                        display: flex;
-                        margin-top: 40px;
-                        padding: 37px 42px;
-                        -webkit-box-pack: justify;
-                        -webkit-justify-content: space-between;
-                        -ms-flex-pack: justify;
-                        justify-content: space-between;
-                        -webkit-box-align: center;
-                        -webkit-align-items: center;
-                        -ms-flex-align: center;
-                        align-items: center;
-                        background-color: #2b2c30;
-                    }
-
-                    .footer-text {
-                        color: #fff;
-                    }
-
-                    .body-2 {
-                        background-color: transparent;
-                    }
-
-                    ._100-hero-section {
-                        position: relative;
-                        max-width: 1080px;
-                        margin-right: auto;
-                        margin-left: auto;
-
-                        padding-top: 17%;
-                    }
-
-                    .heading-2 {
-                        font-size: 270px;
-                    }
-
-                    ._100-hero-text {
-                        font-size: 270px;
-                        line-height: 293px;
-                        text-align: center;
-                    }
-
-                    .link-continuation {
-                        position: absolute;
-                        left: 305px;
-                        top: 363px;
-                        right: 0%;
-                        bottom: 0%;
-                        font-size: 30px;
-                        line-height: 70.5px;
-                        font-weight: 300;
-                    }
-
-                    ._100-client-container {
-                        height: 100%;
-                        max-width: 1080px;
-                        margin-right: auto;
-                        margin-left: auto;
-                    }
-
-                    ._100-client-container.flex {
-                        display: -webkit-box;
-                        display: -webkit-flex;
-                        display: -ms-flexbox;
-                        display: flex;
-                        -webkit-box-orient: vertical;
-                        -webkit-box-direction: normal;
-                        -webkit-flex-direction: column;
-                        -ms-flex-direction: column;
-                        flex-direction: column;
-                        -webkit-box-pack: center;
-                        -webkit-justify-content: center;
-                        -ms-flex-pack: center;
-                        justify-content: center;
-                        -webkit-box-align: center;
-                        -webkit-align-items: center;
-                        -ms-flex-align: center;
-                        align-items: center;
-                    }
-
-                    ._100-clients-section-title {
-                        margin-top: 0px;
-                        margin-bottom: 0px;
-                        font-weight: 300;
-                    }
-
-                    ._100-projects-section {
-                        margin-top: 156px;
-                        padding-top: 102px;
-                        padding-bottom: 102px;
-                        background-color: #f2f2f2;
-                    }
-
-                    ._100-cta-section {
-                        height: 492px;
-                    }
-
-                    .heading-3 {
-                        font-size: 47px;
-                        font-weight: 900;
-                    }
-
-                    .body-3 {
-                        background-image: url("https://uploads-ssl.webflow.com/5e3fd2b4289861757914c9d9/5e786cd31ede362d67bc8e31_LIGHT%201.png");
-                        background-position: 100% 0%;
-                        background-size: auto;
-                        background-repeat: no-repeat;
-                    }
-                    ._100-nav-link {
-                        margin-left: 94px;
-                        -webkit-transition: opacity 200ms ease;
-                        transition: opacity 200ms ease;
-                        color: #2b2c30;
-                        font-size: 20px;
-                        font-weight: 300;
-                        text-decoration: none;
-                    }
-
-                    ._100-nav-link:hover {
-                        text-decoration: underline;
-                    }
-                    ._100-btn {
-                        margin-left: 122px;
-                        padding-right: 37px;
-                        padding-bottom: 10px;
-                        padding-top: 10px;
-                        padding-left: 38px;
-                        border: 0.5px solid #000;
-                        border-radius: 4px;
-                        background-color: transparent;
-                        -webkit-transition: color 500ms ease,
-                            background-color 200ms ease-in-out;
-                        transition: color 500ms ease,
-                            background-color 200ms ease-in-out;
-                        color: #2b2c30;
-                        font-size: 20px;
-                        font-weight: 300;
-                    }
-
-                    ._100-btn:hover {
-                        border-style: solid;
-                        background-color: #2b2c30;
-                        color: #fff;
-                    }
-
-                    @media screen and (max-width: 991px) {
-                        ._100-container {
-                            padding-right: 28px;
-                            padding-left: 28px;
-                        }
-                        ._100-btn {
-                            margin-left: 81px;
-                        }
-
-                        .nav-container {
-                            max-width: none;
-                            padding-right: 28px;
-                            padding-left: 28px;
-                        }
-                        .body-3 {
-                            background-image: none;
-                        }
-
-                        .cta-section {
-                            right: 7%;
-                        }
-
-                        .cta-section.left {
-                            left: 7%;
-                        }
-
-                        .project-heading {
-                            font-size: 71px;
-                        }
-
-                        .footer-flex-container {
-                            -webkit-box-orient: horizontal;
-                            -webkit-box-direction: normal;
-                            -webkit-flex-direction: row;
-                            -ms-flex-direction: row;
-                            flex-direction: row;
-                            -webkit-box-pack: start;
-                            -webkit-justify-content: flex-start;
-                            -ms-flex-pack: start;
-                            justify-content: flex-start;
-                            -webkit-box-align: stretch;
-                            -webkit-align-items: stretch;
-                            -ms-flex-align: stretch;
-                            align-items: stretch;
-                        }
-
-                        .nav {
-                            width: 87%;
-                        }
-
-                        .footer-2 {
-                            padding-right: 20px;
-                            padding-left: 20px;
-                        }
-
-                        .rest {
-                            display: -webkit-box;
-                            display: -webkit-flex;
-                            display: -ms-flexbox;
-                            display: flex;
-                            width: 91%;
-                            -webkit-box-orient: horizontal;
-                            -webkit-box-direction: normal;
-                            -webkit-flex-direction: row;
-                            -ms-flex-direction: row;
-                            flex-direction: row;
-                            -webkit-box-pack: justify;
-                            -webkit-justify-content: space-between;
-                            -ms-flex-pack: justify;
-                            justify-content: space-between;
-                            -webkit-box-align: stretch;
-                            -webkit-align-items: stretch;
-                            -ms-flex-align: stretch;
-                            align-items: stretch;
-                        }
-
-                        .heading {
-                            font-size: 50px;
-                        }
-
-                        ._100-link {
-                            font-size: 20px;
-                        }
-
-                        .paragraph {
-                            width: 370px;
-                            margin-left: 0px;
-                            font-size: 20px;
-                            text-align: right;
-                        }
-
-                        ._100-hero-section {
-                            padding-right: 31px;
-                            padding-left: 31px;
-                        }
-
-                        ._100-hero-text {
-                            font-size: 169px;
-                        }
-
-                        ._100-client-container {
-                            padding-right: 22px;
-                            padding-left: 30px;
-                        }
-
-                        .body-3 {
-                            background-image: none;
-                        }
-                    }
-
-                    @media screen and (max-width: 767px) {
-                        .footer-image {
-                            -o-object-fit: contain;
-                            object-fit: contain;
-                        }
-
-                        .footer-2 {
-                            padding: 40px 20px;
-                        }
-                        ._100-nav-link {
-                            margin-left: 36px;
-                            font-size: 17px;
-                        }
-                        ._100-btn {
-                            margin-left: 36px;
-                        }
-                        .rest {
-                            -webkit-box-orient: vertical;
-                            -webkit-box-direction: reverse;
-                            -webkit-flex-direction: column-reverse;
-                            -ms-flex-direction: column-reverse;
-                            flex-direction: column-reverse;
-                            -webkit-box-pack: justify;
-                            -webkit-justify-content: space-between;
-                            -ms-flex-pack: justify;
-                            justify-content: space-between;
-                            -webkit-box-align: start;
-                            -webkit-align-items: flex-start;
-                            -ms-flex-align: start;
-                            align-items: flex-start;
-                        }
-
-                        ._100-btn {
-                            margin-left: 36px;
-                        }
-
-                        ._100-client {
-                            grid-row-gap: 40px;
-                            -ms-grid-columns: 1fr 1fr;
-                            grid-template-columns: 1fr 1fr;
-                        }
-
-                        .paragraph {
-                            margin-top: 25px;
-                            margin-left: 0px;
-                            font-size: 20px;
-                            line-height: 37px;
-                            text-align: left;
-                        }
-
-                        ._100-hero-text {
-                            font-size: 120px;
-                        }
-
-                        ._100-client-container {
-                            padding-right: 0px;
-                            padding-left: 27px;
-                        }
-                    }
-
-                    @media screen and (max-width: 479px) {
-                        ._100-container {
-                            padding-right: 0px;
-                            padding-left: 0px;
-                        }
-
-                        .nav-container {
-                            padding-right: 7px;
-                            padding-left: 7px;
-                        }
-
-                        .img-container {
-                            width: 100%;
-                        }
-
-                        .cta-section {
-                            position: absolute;
-                            left: 0%;
-                            top: auto;
-                            right: 0%;
-                            bottom: -17%;
-                            -webkit-box-align: center;
-                            -webkit-align-items: center;
-                            -ms-flex-align: center;
-                            align-items: center;
-                        }
-                        ._100-btn {
-                            margin-left: 0px;
-                            font-size: 16px;
-                        }
-
-                        .cta-section.left {
-                            left: 0%;
-                            top: auto;
-                            right: 0%;
-                            bottom: -17%;
-                        }
-
-                        .project-heading {
-                            font-size: 51px;
-                        }
-
-                        .footer-flex-container {
-                            -webkit-box-orient: vertical;
-                            -webkit-box-direction: normal;
-                            -webkit-flex-direction: column;
-                            -ms-flex-direction: column;
-                            flex-direction: column;
-                            -webkit-box-pack: center;
-                            -webkit-justify-content: center;
-                            -ms-flex-pack: center;
-                            justify-content: center;
-                            -webkit-box-align: center;
-                            -webkit-align-items: center;
-                            -ms-flex-align: center;
-                            align-items: center;
-                        }
-
-                        .footer-logo-link {
-                            height: 60px;
-                        }
-
-                        .nav {
-                            width: 100%;
-                            margin-top: 100px;
-                            padding-right: 0px;
-                            -webkit-justify-content: space-around;
-                            -ms-flex-pack: distribute;
-                            justify-content: space-around;
-                            background-color: #f2f2f2;
-                        }
-
-                        .footer-2 {
-                            padding-right: 20px;
-                            padding-left: 20px;
-                            text-align: left;
-                        }
-
-                        .footer-heading {
-                            margin-top: 20px;
-                        }
-
-                        .text-field {
-                            width: 260px;
-                        }
-
-                        ._100-client {
-                            -ms-grid-columns: 1fr;
-                            grid-template-columns: 1fr;
-                        }
-
-                        .heading {
-                            font-size: 40px;
-                        }
-
-                        .paragraph {
-                            width: auto;
-                            margin-top: 40px;
-                            margin-left: 0px;
-                        }
-
-                        ._100-nav-link {
-                            margin-left: 0px;
-                            font-size: 16px;
-                        }
-
-                        ._100-hero-section {
-                            margin-top: 66%;
-                        }
-
-                        ._100-hero-text {
-                            font-size: 60px;
-                        }
-
-                        ._100-client-container {
-                            padding-right: 21px;
-                            padding-left: 21px;
-                        }
-
-                        ._100-clients-section-title {
-                            text-align: center;
-                        }
-
-                        .heading-3 {
-                            text-align: center;
-                        }
-                    }
-                `}
-            </style>
-        </Layout>
+            <div className="scroll-progress">
+                <div className="progress-bar">
+                    <div
+                        data-w-id="610e8cec-3e8c-13c5-6538-e48b662f14e2"
+                        className="progress"
+                    />
+                </div>
+            </div>
+            <div id="clients-section" className="clients-section">
+                <div className="site-container">
+                    <h1 className="section-heading">Previous Clients</h1>
+                    <div className="clients-container">
+                        <div className="client">
+                            <img
+                                src="https://uploads-ssl.webflow.com/5e905ead4576bced72b55425/5e91ae20b1f82c62c9f7f3f3_Group%2011.png"
+                                alt=""
+                            />
+                        </div>
+                        <div className="client">
+                            <img
+                                src="https://uploads-ssl.webflow.com/5e905ead4576bced72b55425/5e91ae20c0e4bb0b5682cca4_Group%2012.png"
+                                srcSet="https://uploads-ssl.webflow.com/5e905ead4576bced72b55425/5e91ae20c0e4bb0b5682cca4_Group%2012-p-500.png 500w, https://uploads-ssl.webflow.com/5e905ead4576bced72b55425/5e91ae20c0e4bb0b5682cca4_Group%2012.png 556w"
+                                sizes="(max-width: 479px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 555.9926147460938px, (max-width: 1439px) 56vw, 482.003662109375px"
+                                alt=""
+                            />
+                        </div>
+                        <div className="client">
+                            <img
+                                src="https://uploads-ssl.webflow.com/5e905ead4576bced72b55425/5e91ae1f37cf8d74953bea9c_Group%2013.png"
+                                srcSet="https://uploads-ssl.webflow.com/5e905ead4576bced72b55425/5e91ae1f37cf8d74953bea9c_Group%2013-p-500.png 500w, https://uploads-ssl.webflow.com/5e905ead4576bced72b55425/5e91ae1f37cf8d74953bea9c_Group%2013.png 504w"
+                                sizes="(max-width: 479px) 100vw, (max-width: 767px) 91vw, (max-width: 991px) 503.9705505371094px, (max-width: 1439px) 51vw, 482.003662109375px"
+                                alt=""
+                            />
+                        </div>
+                        <div className="client">
+                            <img
+                                src="https://uploads-ssl.webflow.com/5e905ead4576bced72b55425/5e91ae205f867872bb58ca1b_Group%2014.png"
+                                srcSet="https://uploads-ssl.webflow.com/5e905ead4576bced72b55425/5e91ae205f867872bb58ca1b_Group%2014-p-500.png 500w, https://uploads-ssl.webflow.com/5e905ead4576bced72b55425/5e91ae205f867872bb58ca1b_Group%2014.png 556w"
+                                sizes="(max-width: 479px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 555.9926147460938px, (max-width: 1439px) 56vw, 482.003662109375px"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="what-we-do" id="what-we-do">
+                <div className="site-container w-clearfix">
+                    <h1 className="section-heading">What we do</h1>
+                    <div
+                        data-w-id="825c3c6f-f540-22e0-50e9-9d58ec130cc4"
+                        className="project-body"
+                    >
+                        <div className="absolute-container">
+                            <h1 className="project-number">01</h1>
+                            <div className="absolute-flex">
+                                <p className="absoulute-paragraph float-right">
+                                    Photography
+                                </p>
+                                <img
+                                    src="https://uploads-ssl.webflow.com/5e905ead4576bced72b55425/5e91c93737cf8dc5773c8ae6_mdi_add.png"
+                                    alt=""
+                                />
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                WebkitTransform:
+                                    "translate3d(0, 190PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
+    
+                                msTransform:
+                                    "translate3d(0, 190PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
+                                transform:
+                                    "translate3d(0, 190PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
+                                opacity: 0,
+                            }}
+                            className="extra-details"
+                        >
+                            <p className="extra-details-paragraph">
+                                Photography and videography.
+                            </p>
+                            <a href="#" className="extra-details-link">
+                                View Projects
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        data-w-id="3edb6852-6553-9938-fdfc-64606cdbf8b5"
+                        className="project-body"
+                    >
+                        <div className="absolute-container">
+                            <h1 className="project-number">02</h1>
+                            <div className="absolute-flex">
+                                <p className="absoulute-paragraph float-right">
+                                    Design
+                                </p>
+                                <img
+                                    src="https://uploads-ssl.webflow.com/5e905ead4576bced72b55425/5e91c93737cf8dc5773c8ae6_mdi_add.png"
+                                    alt=""
+                                />
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                WebkitTransform:
+                                    "translate3d(0, 190PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
+    
+                                msTransform:
+                                    "translate3d(0, 190PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
+                                transform:
+                                    "translate3d(0, 190PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
+                                opacity: 0,
+                            }}
+                            className="extra-details"
+                        >
+                            <p className="extra-details-paragraph">
+                                We do everthing digital design. Web Design, UI
+                                design.
+                            </p>
+                            <a href="#" className="extra-details-link">
+                                View Projects
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        data-w-id="fbd6c3f7-9ac8-a558-0235-a7cd09f08f8c"
+                        className="project-body"
+                    >
+                        <div className="absolute-container">
+                            <h1 className="project-number">03</h1>
+                            <div className="absolute-flex">
+                                <p className="absoulute-paragraph float-right">
+                                    3d Design
+                                </p>
+                                <img
+                                    src="https://uploads-ssl.webflow.com/5e905ead4576bced72b55425/5e91c93737cf8dc5773c8ae6_mdi_add.png"
+                                    alt=""
+                                />
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                WebkitTransform:
+                                    "translate3d(0, 190PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
+    
+                                msTransform:
+                                    "translate3d(0, 190PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
+                                transform:
+                                    "translate3d(0, 190PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
+                                opacity: 0,
+                            }}
+                            className="extra-details"
+                        >
+                            <p className="extra-details-paragraph">
+                                We create beautiful 3d virtual experiences
+                            </p>
+                            <a href="#" className="extra-details-link">
+                                View Projects
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        data-w-id="1de0c2ff-58f5-f859-931d-67c5734f230e"
+                        className="project-body"
+                    >
+                        <div className="absolute-container">
+                            <h1 className="project-number">04</h1>
+                            <div className="absolute-flex">
+                                <p className="absoulute-paragraph float-right">
+                                    Development
+                                </p>
+                                <img
+                                    src="https://uploads-ssl.webflow.com/5e905ead4576bced72b55425/5e91c93737cf8dc5773c8ae6_mdi_add.png"
+                                    alt=""
+                                />
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                WebkitTransform:
+                                    "translate3d(0, 190PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
+    
+                                msTransform:
+                                    "translate3d(0, 190PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
+                                transform:
+                                    "translate3d(0, 190PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)",
+                                opacity: 0,
+                            }}
+                            className="extra-details"
+                        >
+                            <p className="extra-details-paragraph">
+                                We convert &nbsp;beautiful designs into an
+                                actual working product
+                            </p>
+                            <a href="#" className="extra-details-link">
+                                View Projects
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer id="footer" className="footer">
+                <div className="w-container">
+                    <div className="footer-flex-container">
+                        <a href="#" className="footer-logo-link w-inline-block">
+                            <img
+                                src="https://uploads-ssl.webflow.com/5e905ead4576bced72b55425/5e9060d6d51614fd85de7a27_Group%204.svg"
+                                width={150}
+                                height={150}
+                                alt=""
+                                className="footer-image"
+                            />
+                        </a>
+                        <div>
+                            <h2 className="footer-heading">Links</h2>
+                            <ul className="w-list-unstyled">
+                                <li>
+                                    <a href="#" className="footer-link">
+                                        About us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" className="footer-link">
+                                        Contact Us
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2 className="footer-heading">Socials</h2>
+                            <ul className="w-list-unstyled">
+                                <li>
+                                    <a href="#" className="footer-link">
+                                        Facebook
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" className="footer-link">
+                                        instagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="copyright">
+                        Copyright © 2020 100ndup. All rights reserved.
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <style jsx>{`
+            body {
+                font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans",
+                    "Droid Sans", "Helvetica Neue", sans-serif;
+                color: #000;
+                font-size: 14px;
+                line-height: 20px;
+            }
+    
+            h1 {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                font-size: 38px;
+                line-height: 44px;
+                font-weight: 700;
+            }
+    
+            p {
+                margin-bottom: 0px;
+            }
+    
+            .nav {
+                position: fixed;
+                left: 0%;
+                top: 0%;
+                right: 0%;
+                bottom: auto;
+                z-index: 10;
+                display: block;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: row;
+                -ms-flex-direction: row;
+                flex-direction: row;
+                -webkit-box-pack: justify;
+                -webkit-justify-content: space-between;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+            }
+    
+            .nav-container {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                max-width: 1190px;
+                margin-right: auto;
+                margin-left: auto;
+                padding-right: 38px;
+                padding-left: 0px;
+                -webkit-box-pack: justify;
+                -webkit-justify-content: space-between;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+                -ms-flex-align: center;
+                align-items: center;
+            }
+    
+            .body-2 {
+                line-height: 16px;
+                font-weight: 300;
+            }
+    
+            .section-identifier {
+                position: fixed;
+                left: 0%;
+                top: 0%;
+                right: auto;
+                bottom: 0%;
+                z-index: 4;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                width: 120px;
+                margin-top: -118px;
+                padding-left: 8px;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                -webkit-box-pack: center;
+                -webkit-justify-content: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+            }
+    
+            .identifier-link {
+                margin-top: 20px;
+                color: #000;
+                font-size: 16px;
+                font-weight: 300;
+                text-align: left;
+                text-decoration: none;
+            }
+    
+            .identifier-link.w--current {
+                font-weight: 900;
+            }
+    
+            .hero-section {
+                position: relative;
+            }
+    
+            .hero-scroll-container {
+                position: relative;
+                height: 150vh;
+            }
+    
+            .sticky-container {
+                position: -webkit-sticky;
+                position: sticky;
+                top: 0px;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                overflow: hidden;
+                height: 100vh;
+                max-width: 980px;
+                margin-right: auto;
+                margin-left: auto;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                -webkit-box-pack: center;
+                -webkit-justify-content: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+                -ms-flex-align: center;
+                align-items: center;
+            }
+    
+            .hero-bullet-points {
+                position: absolute;
+                width: 100%;
+                opacity: 0;
+                text-align: center;
+            }
+    
+            .hero-bullet-text {
+                margin-bottom: 0px;
+                font-size: 100px;
+                line-height: 1.06;
+                font-weight: 700;
+            }
+    
+            .scroll-sequence {
+                position: absolute;
+                top: 0px;
+                z-index: 0.1;
+                width: 100%;
+                height: 150vh;
+            }
+    
+            .sequence-container {
+                position: absolute;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                margin-right: auto;
+                margin-left: auto;
+            }
+    
+            .animation-sequence {
+                position: -webkit-sticky;
+                position: sticky;
+                top: 0px;
+                overflow: hidden;
+            }
+    
+            .lottie-animation-container {
+                position: relative;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                width: 100%;
+                height: 100vh;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: row;
+                -ms-flex-direction: row;
+                flex-direction: row;
+                -webkit-box-pack: center;
+                -webkit-justify-content: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+                -ms-flex-align: center;
+                align-items: center;
+            }
+    
+            .lottie-animation-2 {
+                position: absolute;
+                width: 100%;
+                max-width: 1458px;
+            }
+    
+            ._100-btn {
+                padding: 10px 38px 10px 37px;
+                border: 0.5px solid #000;
+                border-radius: 4px;
+                background-color: transparent;
+                -webkit-transition: color 300ms
+                        cubic-bezier(0.55, 0.085, 0.68, 0.53),
+                    background-color 200ms ease-in;
+                transition: color 300ms cubic-bezier(0.55, 0.085, 0.68, 0.53),
+                    background-color 200ms ease-in;
+                color: #000;
+                font-size: 16px;
+                font-weight: 300;
+            }
+    
+            ._100-btn:hover {
+                background-color: #000;
+                color: #fff;
+            }
+    
+            .scroll-indicator {
+                position: fixed;
+                left: 47%;
+                top: 87%;
+                right: 0%;
+                bottom: 0%;
+                z-index: 12;
+                width: 90px;
+            }
+    
+            .lottie-animation-3 {
+                width: 100%;
+                height: 100%;
+            }
+    
+            .clients-section {
+                height: 780px;
+            }
+    
+            .scroll-progress {
+                position: fixed;
+                left: auto;
+                top: 0%;
+                right: 0%;
+                bottom: 0%;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                width: 5%;
+                height: 100%;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                -webkit-box-pack: center;
+                -webkit-justify-content: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+                -ms-flex-align: center;
+                align-items: center;
+            }
+    
+            .progress-bar {
+                position: relative;
+                display: block;
+                width: 1px;
+                height: 39%;
+                -webkit-box-pack: center;
+                -webkit-justify-content: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                -webkit-box-align: start;
+                -webkit-align-items: flex-start;
+                -ms-flex-align: start;
+                align-items: flex-start;
+                background-color: #000;
+            }
+    
+            .progress {
+                position: absolute;
+                left: -2px;
+                width: 4px;
+                background-color: #000;
+            }
+    
+            .brand {
+                margin-left: 0px;
+            }
+    
+            .site-container {
+                max-width: 980px;
+                margin-right: auto;
+                margin-left: auto;
+            }
+    
+            .section-heading {
+                font-size: 50px;
+                line-height: 59px;
+            }
+    
+            .clients-container {
+                display: -ms-grid;
+                display: grid;
+                margin-top: 100px;
+                grid-auto-columns: 1fr;
+                grid-column-gap: 16px;
+                grid-row-gap: 16px;
+                -ms-grid-columns: 1fr 1fr;
+                grid-template-columns: 1fr 1fr;
+                -ms-grid-rows: auto auto;
+                grid-template-rows: auto auto;
+            }
+    
+            .client {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: row;
+                -ms-flex-direction: row;
+                flex-direction: row;
+                -webkit-box-pack: start;
+                -webkit-justify-content: flex-start;
+                -ms-flex-pack: start;
+                justify-content: flex-start;
+                -webkit-box-align: start;
+                -webkit-align-items: flex-start;
+                -ms-flex-align: start;
+                align-items: flex-start;
+            }
+    
+            .what-we-do {
+                margin-top: 786px;
+            }
+    
+            .project-body {
+                position: relative;
+                width: 90%;
+                height: 389px;
+                margin-top: 300px;
+                float: right;
+                background-color: #c4c4c4;
+            }
+    
+            .project-number {
+                font-size: 100px;
+                font-weight: 300;
+            }
+    
+            .absolute-container {
+                position: absolute;
+                left: auto;
+                top: -8%;
+                right: 0%;
+                bottom: auto;
+            }
+    
+            .absoulute-paragraph {
+                font-size: 18px;
+            }
+    
+            .absoulute-paragraph.float-right {
+                text-align: right;
+            }
+    
+            .absolute-flex {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                margin-top: 40px;
+                -webkit-box-pack: center;
+                -webkit-justify-content: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+                -ms-flex-align: center;
+                align-items: center;
+            }
+    
+            .extra-details {
+                position: absolute;
+                left: auto;
+                top: auto;
+                right: 0%;
+                bottom: 0%;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                width: 474px;
+                height: 247px;
+                padding: 33px 34px 42px 51px;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                -webkit-box-pack: justify;
+                -webkit-justify-content: space-between;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+                background-color: #e5e5e5;
+                opacity: 0;
+            }
+    
+            .extra-details-paragraph {
+                font-size: 34px;
+                line-height: 42px;
+            }
+    
+            .extra-details-link {
+                color: #000;
+                font-size: 24px;
+                font-weight: 700;
+            }
+    
+            .footer {
+                margin-top: 428px;
+                padding-top: 60px;
+                padding-bottom: 40px;
+                -webkit-box-align: start;
+                -webkit-align-items: flex-start;
+                -ms-flex-align: start;
+                align-items: flex-start;
+                background-color: #000;
+                text-align: center;
+            }
+    
+            .footer-flex-container {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                margin-bottom: 40px;
+                -webkit-box-pack: justify;
+                -webkit-justify-content: space-between;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+                text-align: left;
+            }
+    
+            .footer-logo-link {
+                max-height: 60px;
+                min-width: 60px;
+                -webkit-box-flex: 0;
+                -webkit-flex: 0 auto;
+                -ms-flex: 0 auto;
+                flex: 0 auto;
+            }
+    
+            .footer-image {
+                width: 100%;
+                height: 100%;
+                -o-object-fit: contain;
+                object-fit: contain;
+                -o-object-position: 0% 50%;
+                object-position: 0% 50%;
+            }
+    
+            .footer-heading {
+                margin-top: 0px;
+                margin-bottom: 20px;
+                color: #fff;
+                font-size: 14px;
+                line-height: 1.5;
+            }
+    
+            .footer-link {
+                display: block;
+                margin-bottom: 10px;
+                color: #fff;
+                text-decoration: none;
+            }
+    
+            .footer-link:hover {
+                text-decoration: underline;
+            }
+    
+            .copyright {
+                color: #fff;
+            }
+    
+            @media screen and (min-width: 1440px) {
+                .section-identifier {
+                    left: 5%;
+                }
+                .hero-scroll-container {
+                    position: relative;
+                }
+                .sticky-container {
+                    position: -webkit-sticky;
+                    position: sticky;
+                    display: -webkit-box;
+                    display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+                    overflow: hidden;
+                    height: 100vh;
+                    max-width: 980px;
+                    margin-right: auto;
+                    margin-left: auto;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -webkit-flex-direction: column;
+                    -ms-flex-direction: column;
+                    flex-direction: column;
+                    -webkit-box-pack: center;
+                    -webkit-justify-content: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    -webkit-box-align: center;
+                    -webkit-align-items: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                }
+                .hero-bullet-points {
+                    position: absolute;
+                    width: 100%;
+                    opacity: 0;
+                }
+                .hero-bullet-text {
+                    line-height: 1.06;
+                    font-weight: 700;
+                    text-align: center;
+                }
+                .scroll-sequence {
+                    position: absolute;
+                    top: 0px;
+                    width: 100%;
+                    margin-top: 0px;
+                }
+                .sequence-container {
+                    position: absolute;
+                    top: 0px;
+                    width: 100%;
+                    height: 100%;
+                }
+                .animation-sequence {
+                    position: -webkit-sticky;
+                    position: sticky;
+                    top: 0px;
+                    overflow: hidden;
+                }
+                .lottie-animation-container {
+                    position: relative;
+                    display: -webkit-box;
+                    display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+                    width: 100%;
+                    height: 100vh;
+                    padding-top: 30px;
+                    -webkit-box-pack: center;
+                    -webkit-justify-content: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    -webkit-box-align: center;
+                    -webkit-align-items: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                }
+                .lottie-animation-2 {
+                    position: absolute;
+                    width: 100%;
+                }
+                .scroll-progress {
+                    right: 2%;
+                    display: -webkit-box;
+                    display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-pack: center;
+                    -webkit-justify-content: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                }
+                .brand {
+                    margin-left: -46px;
+                }
+            }
+    
+            @media screen and (max-width: 991px) {
+                .hero-bullet-text {
+                    font-size: 64px;
+                }
+                .scroll-indicator {
+                    left: 43%;
+                }
+                .site-container {
+                    padding-right: 22px;
+                    padding-left: 22px;
+                }
+                .clients-container {
+                    justify-items: center;
+                    -ms-grid-columns: 1fr;
+                    grid-template-columns: 1fr;
+                }
+                .footer {
+                    padding-right: 20px;
+                    padding-left: 20px;
+                }
+            }
+    
+            @media screen and (max-width: 767px) {
+                .nav-container {
+                    padding-right: 9px;
+                }
+                .section-identifier {
+                    display: none;
+                }
+                .scroll-progress {
+                    display: none;
+                }
+                .footer {
+                    padding: 40px 20px;
+                }
+                .footer-image {
+                    -o-object-fit: contain;
+                    object-fit: contain;
+                }
+            }
+    
+            @media screen and (max-width: 479px) {
+                .hero-bullet-text {
+                    font-size: 44px;
+                }
+                .scroll-indicator {
+                    left: 40%;
+                }
+                .site-container {
+                    padding-right: 14px;
+                    padding-left: 14px;
+                }
+                .section-heading {
+                    font-size: 38px;
+                    text-align: center;
+                }
+                .extra-details {
+                    width: 108%;
+                    padding-right: 0px;
+                    padding-left: 31px;
+                }
+                .extra-details-paragraph {
+                    font-size: 20px;
+                }
+                .footer {
+                    padding-right: 20px;
+                    padding-left: 20px;
+                    text-align: left;
+                }
+                .footer-flex-container {
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -webkit-flex-direction: column;
+                    -ms-flex-direction: column;
+                    flex-direction: column;
+                }
+                .footer-logo-link {
+                    height: 60px;
+                }
+                .footer-heading {
+                    margin-top: 20px;
+                }
+            }
+        `}</style>
+        </>
     )
 }
 

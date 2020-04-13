@@ -1,6 +1,7 @@
 import React from "react"
 import App from "next/app"
-import "../global/main.css"
+import "../global/normalize.css"
+import "../global/webflow-base.css"
 import Head from "next/head"
 
 class MyApp extends App {
