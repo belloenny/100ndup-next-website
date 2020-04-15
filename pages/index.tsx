@@ -2,7 +2,7 @@ import * as React from "react"
 import { NextPage } from "next"
 import Head from "next/head"
 import Link from "next/link"
-import Router from 'next/router'
+import Router from "next/router"
 import Layout from "../components/Layout"
 
 const IndexPage: NextPage = () => {
@@ -197,11 +197,17 @@ const IndexPage: NextPage = () => {
                                 <p className="extra-details-paragraph">
                                     Photography and videography.
                                 </p>
-                                <a onClick={(e) =>{
-                                    e.preventDefault()
-                                    Router.push('/projects/[pid]', `/projects/1`)
-                                }} className="extra-details-link">
-                                        View Projects
+                                <a
+                                    onClick={(e) => {
+                                        e.preventDefault()
+                                        Router.push(
+                                            "/projects/[pid]",
+                                            `/projects/1`
+                                        )
+                                    }}
+                                    className="extra-details-link"
+                                >
+                                    View Projects
                                 </a>
                             </div>
                             <div className="photo-container">
@@ -248,13 +254,18 @@ const IndexPage: NextPage = () => {
                                     We do everthing digital design. Web Design,
                                     UI design.
                                 </p>
-                                <a onClick={(e) =>{
-                                    e.preventDefault()
-                                    Router.push('/projects/[pid]', `/projects/1`)
-                                }} className="extra-details-link">
-                                        View Projects
+                                <a
+                                    onClick={(e) => {
+                                        e.preventDefault()
+                                        Router.push(
+                                            "/projects/[pid]",
+                                            `/projects/1`
+                                        )
+                                    }}
+                                    className="extra-details-link"
+                                >
+                                    View Projects
                                 </a>
-                            
                             </div>
                             <div className="photo-container">
                                 <img
@@ -298,11 +309,17 @@ const IndexPage: NextPage = () => {
                                 <p className="extra-details-paragraph">
                                     we creative immersive 3d virtual experiences
                                 </p>
-                                <a onClick={(e) =>{
-                                    e.preventDefault()
-                                    Router.push('/projects/[pid]', `/projects/2`)
-                                }} className="extra-details-link">
-                                        View Projects
+                                <a
+                                    onClick={(e) => {
+                                        e.preventDefault()
+                                        Router.push(
+                                            "/projects/[pid]",
+                                            `/projects/2`
+                                        )
+                                    }}
+                                    className="extra-details-link"
+                                >
+                                    View Projects
                                 </a>
                             </div>
                             <div className="photo-container">
@@ -349,11 +366,17 @@ const IndexPage: NextPage = () => {
                                     We convert &nbsp;beautiful designs into an
                                     actual working product
                                 </p>
-                                <a onClick={(e) =>{
-                                    e.preventDefault()
-                                    Router.push('/projects/[pid]', `/projects/3`)
-                                }} className="extra-details-link">
-                                        View Projects
+                                <a
+                                    onClick={(e) => {
+                                        e.preventDefault()
+                                        Router.push(
+                                            "/projects/[pid]",
+                                            `/projects/3`
+                                        )
+                                    }}
+                                    className="extra-details-link"
+                                >
+                                    View Projects
                                 </a>
                             </div>
                             <div className="photo-container">
@@ -368,7 +391,6 @@ const IndexPage: NextPage = () => {
                         </div>
                     </div>
                 </div>
-                
             </div>
             <style jsx>{`
                 body {
@@ -392,7 +414,6 @@ const IndexPage: NextPage = () => {
                     margin-bottom: 0px;
                 }
 
-                
                 .body-2 {
                     line-height: 16px;
                     font-weight: 300;
@@ -543,8 +564,6 @@ const IndexPage: NextPage = () => {
                     width: 100%;
                     max-width: 1458px;
                 }
-
-                
 
                 .scroll-indicator {
                     position: fixed;
@@ -764,9 +783,6 @@ const IndexPage: NextPage = () => {
                     cursor: pointer;
                 }
 
-                
-                
-
                 .project-image {
                     position: absolute;
                     left: 0%;
@@ -913,7 +929,6 @@ const IndexPage: NextPage = () => {
                         -ms-grid-columns: 1fr;
                         grid-template-columns: 1fr;
                     }
-                   
                 }
 
                 @media screen and (max-width: 767px) {
@@ -926,7 +941,6 @@ const IndexPage: NextPage = () => {
                     .scroll-progress {
                         display: none;
                     }
-                   
                 }
 
                 @media screen and (max-width: 479px) {
@@ -937,8 +951,9 @@ const IndexPage: NextPage = () => {
                         left: 40%;
                     }
                     .site-container {
-                        padding-right: 14px;
-                        padding-left: 14px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
                     }
                     .section-heading {
                         font-size: 38px;
@@ -952,7 +967,7 @@ const IndexPage: NextPage = () => {
                     .extra-details-paragraph {
                         font-size: 20px;
                     }
-                    
+
                     .project-image {
                         position: static;
                     }
