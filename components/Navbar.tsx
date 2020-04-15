@@ -15,7 +15,7 @@ export const Navbar: React.FC = ({}) => {
                         </a>
                     </Link>
 
-                    <Link href="/about">
+                    <Link href="/contact">
                         <a className="_100-btn w-button">Contact Us</a>
                     </Link>
                 </div>
